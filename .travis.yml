@@ -15,7 +15,7 @@ after_sucess:
     - docker build -t book5017/multi-worker ./worker
 
     # Log in to the docker CLI
-    - echo "$DOCKER_PASSWORD" | docker login -u book5017 --password_stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     # Take those images and push them to docker hub
     # - docker push jakethecoder/mutl-client
