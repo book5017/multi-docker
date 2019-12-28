@@ -27,3 +27,4 @@ after_sucess:
     - docker push book5017/mutl-nginx
     - docker push book5017/mutl-server
     - docker push book5017/mutl-worker
+    
