@@ -3,16 +3,16 @@ services:
     - docker
 
 before_install:
-    - docker build -t jake/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t book5017/react-test -f ./client/Dockerfile.dev ./client
 
 script:
     - docker run -e CI=true jake/react-test npm test
 
 after_sucess:
-    - docker build -t jake/multi-client ./client
-    - docker build -t jake/multi-nginx ./nginx
-    - docker build -t jake/multi-server ./server
-    - docker build -t jake/multi-worker ./worker
+    - docker build -t book5017/multi-client ./client
+    - docker build -t book5017/multi-nginx ./nginx
+    - docker build -t book5017/multi-server ./server
+    - docker build -t book5017/multi-worker ./worker
 
     # Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password_stdin
