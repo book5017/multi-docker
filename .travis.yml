@@ -6,7 +6,7 @@ before_install:
     - docker build -t book5017/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run -e CI=true jake/react-test npm test
+    - docker run -e CI=true book5017/react-test npm test
 
 after_sucess:
     - docker build -t book5017/multi-client ./client
@@ -27,4 +27,3 @@ after_sucess:
     - docker push book5017/mutl-nginx
     - docker push book5017/mutl-server
     - docker push book5017/mutl-worker
-    
